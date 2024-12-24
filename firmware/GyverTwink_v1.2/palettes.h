@@ -2,25 +2,26 @@
 // я оставил самые подходящие (листай в самый низ)
 
 #include <FastLED.h>      // лента
-// http://soliton.vm.bytemark.co.uk/pub/cpt-city/
+// http://seaviewsensing.com//pub/cpt-city/
 
 CRGBPalette16 customPal;
 
 DEFINE_GRADIENT_PALETTE( Fire_gp ) {
-  0,     0,  0,  0,
+  0,     255,  255,  255,
   128,   255,  0,  0,
-  224,   255, 255,  0,
+  214,   255, 255,  0,
   255,   255, 255, 255
 };
 
 DEFINE_GRADIENT_PALETTE( Sunset_Real_gp ) {
-  0, 120,  0,  0,
+  0, 120,  0,  10,
   22, 179, 22,  0,
   51, 255, 104,  0,
   85, 167, 22, 18,
   135, 100,  0, 103,
   198,  16,  0, 130,
-  255,   0,  0, 160
+  240,   0,  0, 160,
+  255,   60,  0, 100
 };
 
 DEFINE_GRADIENT_PALETTE( dkbluered_gp ) {
@@ -56,6 +57,7 @@ DEFINE_GRADIENT_PALETTE( dkbluered_gp ) {
   246,  12,  0,  1,
   255,   4,  0,  1
 };
+
 DEFINE_GRADIENT_PALETTE( Optimus_Prime_gp ) {
   0,   5, 16, 18,
   25,   5, 16, 18,
@@ -102,7 +104,6 @@ DEFINE_GRADIENT_PALETTE( hotGrad_gp ) {
   206, 142,  7,  1,
   255, 135, 36,  0
 };
-
 
 DEFINE_GRADIENT_PALETTE( pinkGrad_gp ) {
   0, 249, 32, 145,
@@ -172,7 +173,6 @@ DEFINE_GRADIENT_PALETTE( acid_gp ) {
   255,   0, 12,  0
 };
 
-
 DEFINE_GRADIENT_PALETTE( blueSmoke_gp ) {
   0,   0,  0,  0,
   12,   1,  1,  3,
@@ -199,15 +199,9 @@ DEFINE_GRADIENT_PALETTE( gummy_gp ) {
 
 DEFINE_GRADIENT_PALETTE( leo_gp ) {
   0, 0, 0, 0,
-  16, 0, 0, 0,
-  32, 0, 0, 0,
-  18, 0, 0, 0,
-  64, 16, 8, 0,
+  32, 16, 8, 0,
   80, 80, 40, 0,
-  96, 16, 8, 0,
-  112, 0, 0, 0,
-  128, 0, 0, 0,
-  144, 0, 0, 0,
+  128, 16, 8, 0,
   160, 0, 0, 0,
   176, 0, 0, 0,
   192, 0, 0, 0,
@@ -239,18 +233,543 @@ DEFINE_GRADIENT_PALETTE ( redwhite_gp ) {
   255, 255, 0, 0,
 };
 
-const TProgmemRGBPalette16 WoodFireColors_p PROGMEM = {CRGB::Black, 0x330e00, 0x661c00, 0x992900, 0xcc3700, CRGB::OrangeRed, 0xff5800, 0xff6b00, 0xff7f00, 0xff9200, CRGB::Orange, 0xffaf00, 0xffb900, 0xffc300, 0xffcd00, CRGB::Gold};             //* рыжий
-const TProgmemRGBPalette16 NormalFire_p PROGMEM = {CRGB::Black, 0x330000, 0x660000, 0x990000, 0xcc0000, CRGB::Red, 0xff0c00, 0xff1800, 0xff2400, 0xff3000, 0xff3c00, 0xff4800, 0xff5400, 0xff6000, 0xff6c00, 0xff7800};                             // красный
-const TProgmemRGBPalette16 LithiumFireColors_p PROGMEM = {CRGB::Black, 0x240707, 0x470e0e, 0x6b1414, 0x8e1b1b, CRGB::FireBrick, 0xc14244, 0xd16166, 0xe08187, 0xf0a0a9, CRGB::Pink, 0xff9ec0, 0xff7bb5, 0xff59a9, 0xff369e, CRGB::DeepPink};        //* пастель
-const TProgmemRGBPalette16 SodiumFireColors_p PROGMEM = {CRGB::Black, 0x332100, 0x664200, 0x996300, 0xcc8400, CRGB::Orange, 0xffaf00, 0xffb900, 0xffc300, 0xffcd00, CRGB::Gold, 0xf8cd06, 0xf0c30d, 0xe9b913, 0xe1af1a, CRGB::Goldenrod};           //* Yellow
-const TProgmemRGBPalette16 CopperFireColors_p PROGMEM = {CRGB::Black, 0x001a00, 0x003300, 0x004d00, 0x006600, CRGB::Green, 0x239909, 0x45b313, 0x68cc1c, 0x8ae626, CRGB::GreenYellow, 0x94f530, 0x7ceb30, 0x63e131, 0x4bd731, CRGB::LimeGreen};     //* Green
-const TProgmemRGBPalette16 AlcoholFireColors_p PROGMEM = {CRGB::Black, 0x000033, 0x000066, 0x000099, 0x0000cc, CRGB::Blue, 0x0026ff, 0x004cff, 0x0073ff, 0x0099ff, CRGB::DeepSkyBlue, 0x1bc2fe, 0x36c5fd, 0x51c8fc, 0x6ccbfb, CRGB::LightSkyBlue};  //* Blue
+//--------------new---------------------
+DEFINE_GRADIENT_PALETTE ( bhw1_28_gp ) {
+  0,   75,  1,   221,
+  30,  252, 73,  255,
+  48,  169, 0,   242,
+  119, 0,   149, 242,
+  170, 43,   0,   242,
+  206, 252, 73,  255,
+  232, 78,  12,  214,
+  255, 0,   149, 242
+};
+
+DEFINE_GRADIENT_PALETTE( bhw2_whooo_gp ) {
+    0,   7,128, 95,
+   30,   8,  9, 35,
+   51,  21, 24, 25,
+   66,  77, 55, 96,
+   84, 255,255,125,
+  101,  45, 39,  4,
+  122, 224, 45,144,
+  137,  82,  1, 34,
+  160,  39, 47, 35,
+  175, 155, 99, 91,
+  204,   4, 10, 21,
+  224,   5, 66, 68,
+  255,  75,166, 78
+};
+
+DEFINE_GRADIENT_PALETTE( bhw2_thanks_gp ) {
+    0,   9,  5,  1,
+   48,  25,  9,  1,
+   76, 137, 27,  1,
+   96,  98, 42,  1,
+  124, 144, 79,  1,
+  153,  98, 42,  1,
+  178, 137, 27,  1,
+  211,  23,  9,  1,
+  255,   9,  5,  1
+};
+
+DEFINE_GRADIENT_PALETTE( eawc_sub_gp ) {//splitted
+    0, 255,117,212,
+   51, 255,117,212,
+   51, 255,255, 71,
+  102, 255,255, 71,
+  102, 142,255,  0,
+  153, 142,255,  0,
+  153, 101,255,145,
+  204, 101,255,145,
+  204,  42,255,255,
+  255,  42,255,255
+};
+
+DEFINE_GRADIENT_PALETTE( paintjet_gp ) {//splitted
+    0, 227,223,201,
+   17, 227,223,201,
+   17, 128, 13, 10,
+   33, 128, 13, 10,
+   33,   3, 59, 19,
+   51,   3, 59, 19,
+   51, 217,207, 10,
+   68, 217,207, 10,
+   68,   4,  6, 35,
+   84,   4,  6, 35,
+   84, 115,  6, 29,
+  102, 115,  6, 29,
+  102,   2, 45,132,
+  119,   2, 45,132,
+  119,   1,  1,  1,
+  135,   1,  1,  1,
+  135, 227,223,201,
+  153, 227,223,201,
+  153, 128, 13, 10,
+  170, 128, 13, 10,
+  170,   3, 59, 19,
+  186,   3, 59, 19,
+  186, 217,207, 10,
+  204, 217,207, 10,
+  204,   4,  6, 35,
+  221,   4,  6, 35,
+  221, 115,  6, 29,
+  237, 115,  6, 29,
+  237,   2, 45,132,
+  255,   2, 45,132
+};
+
+DEFINE_GRADIENT_PALETTE( calbayo_21_gp ) {
+    0,  41,  2,  3,
+   35, 106, 40,  1,
+   63, 210,131,  1,
+  127, 210, 31,  6,
+  190,   1, 58, 29,
+  249,   1, 25, 14,
+  255,   3,  6,  6
+};
+
+DEFINE_GRADIENT_PALETTE( shikon_21_gp ) { //splitted
+    0,   2,  2,  2,
+    1, 126,  0,  1,
+   12, 126,  0,  1,
+   13,   2,  2,  2,
+   26,   2,  2,  2,
+   27, 199,223,  0,
+   37, 199,223,  0,
+   40,  26,  0,219,
+   51,  26,  0,219,
+   53,   0,223, 64,
+   64,   0,223, 64,
+   64, 126,  0, 59,
+   76, 126,  0, 59,
+   77,  44,223,  0,
+   89,  44,223,  0,
+   91, 217, 47,  0,
+  102, 217, 47,  0,
+  103,   0,219,219,
+  114,   0,219,219,
+  115,   0, 25,219,
+  125,   0, 25,219,
+  126,  55,  2, 32,
+  136,  55,  2, 32,
+  140,   0,219,219,
+  151,   0,219,219,
+  152, 217, 47,  0,
+  162, 217, 47,  0,
+  165,  44,223,  0,
+  175,  44,223,  0,
+  178, 126,  0, 59,
+  188, 126,  0, 59,
+  190,   0,223, 64,
+  203,   0,223, 64,
+  204,  26,  0,219,
+  214,  26,  0,219,
+  216, 199,223,  0,
+  226, 199,223,  0,
+  228,   2,  2,  2,
+  240,   2,  2,  2,
+  242, 126,  0,  1,
+  252, 126,  0,  1,
+  255,   2,  2,  2
+};
+
+DEFINE_GRADIENT_PALETTE( purple_orange_d05_gp ) { //splitted
+    0,  65, 31, 95,
+   51,  65, 31, 95,
+   51, 161, 84,123,
+  102, 161, 84,123,
+  102, 179,189,182,
+  153, 179,189,182,
+  153, 239,130, 32,
+  204, 239,130, 32,
+  204, 182, 48,  1,
+  255, 182, 48,  1
+};
+
+DEFINE_GRADIENT_PALETTE( cbcPiYG_gp ) {
+    0,  55,  1, 14,
+   11,  55,  1, 14,
+   23,  88,  1, 27,
+   34, 130,  1, 42,
+   46, 153, 16, 67,
+   57, 177, 47, 98,
+   69, 199, 79,132,
+   81, 220,121,172,
+   92, 234,154,192,
+  104, 249,191,216,
+  115, 242,215,226,
+  127, 234,237,235,
+  139, 213,235,190,
+  150, 194,233,153,
+  162, 148,213, 93,
+  173, 109,193, 51,
+  185,  71,159, 24,
+  197,  41,130,  8,
+  208,  23,100,  4,
+  220,  11, 74,  1,
+  231,   5, 51,  1,
+  243,   1, 32,  1,
+  255,   1, 32,  1
+};
+
+DEFINE_GRADIENT_PALETTE( PuOr_gp ) {
+    0,  41, 10,  1,
+   31, 101, 24,  1,
+   63, 182, 57,  1,
+   95, 249,124, 23,
+  127, 252,191,109,
+  127, 165,180,207,
+  159, 100,105,156,
+  191,  42, 44, 95,
+  223,  14,  4, 52,
+  255,   2,  0, 11
+};
+
+DEFINE_GRADIENT_PALETTE( Need_I_Say_More_gp ) {
+    0, 224, 49, 13,
+   42, 224, 49, 13,
+   84, 232, 73, 22,
+   99, 239,103, 34,
+  114, 234,136, 50,
+  126, 229,176, 68,
+  137, 144,159, 75,
+  153,  82,142, 83,
+  168,  48,127, 85,
+  211,  25,111, 89,
+  255,  25,111, 89
+};
+
+DEFINE_GRADIENT_PALETTE( Alive_And_Kicking_gp ) {
+    0, 192, 50,207,
+   25, 192, 50,207,
+   51, 133, 50,207,
+   76,  87, 50,207,
+  102,  59, 61,207,
+  127,  37, 73,207,
+  153,  37, 97,207,
+  178,  37,127,207,
+  204,  37,166,172,
+  229,  37,213,140,
+  255,  37,213,140
+};
+
+DEFINE_GRADIENT_PALETTE( icing_on_the_cake_gp ) {
+    0, 255,255,255,
+   70, 255,255,255,
+  140, 244,193,245,
+  149, 232,141,235,
+  158, 153,154,214,
+  167,  94,168,197,
+  175, 142,161,128,
+  209, 203,154, 75,
+  242, 125, 85, 45,
+  248,  67, 37, 23,
+  255,  67, 37, 23
+};
+
+DEFINE_GRADIENT_PALETTE( mellon_ball_surprise_gp ) {
+    0, 152,227, 85,
+   25, 152,227, 85,
+   51, 182,235, 95,
+   76, 215,244,106,
+  102, 234,189, 79,
+  127, 255,142, 56,
+  153, 255,115, 51,
+  178, 255, 90, 45,
+  204, 242, 59, 52,
+  229, 229, 36, 62,
+  255, 229, 36, 62
+};
+
+DEFINE_GRADIENT_PALETTE( Pastels_gp ) {
+    0, 169,112,125,
+   34,  95,147,142,
+   65,  46,186,162,
+  100,  52,169,162,
+  102,  58,152,164,
+  127, 126,178,182,
+  168, 232,207,203,
+  213, 239,201,221,
+  255, 244,197,240
+};
+
+DEFINE_GRADIENT_PALETTE( Analogous_06_gp ) {
+    0, 142, 82,255,
+   63, 194, 75,168,
+  127, 255, 68,103,
+  191, 255, 55, 71,
+  255, 255, 44, 45
+};
+
+DEFINE_GRADIENT_PALETTE( Split_Complementary_06_gp ) {
+    0, 120,255, 71,
+   63, 179,146, 85,
+  127, 255, 68,103,
+  191,  42,115, 72,
+  255,   0,178, 47
+};
+
+DEFINE_GRADIENT_PALETTE( Split_04_gp ) {
+    0, 182,255,145,
+   63,  79,255,135,
+  127,  23,255,123,
+  191, 100,203,158,
+  255, 255,156,197
+};
+
+DEFINE_GRADIENT_PALETTE( Split_Complementary_07_gp ) {
+    0,   0,255, 71,
+   63,  27, 55, 12,
+  127, 167,  0,  0,
+  191,  49, 14,  0,
+  255,   4, 68,  0
+};
+
+DEFINE_GRADIENT_PALETTE( Split_Complementary_03a_gp ) {
+    0,   7, 25,255,
+   63,  74, 29, 45,
+  127, 255, 33,  0,
+  191, 132,115, 25,
+  255,  53,255,145
+};
+
+DEFINE_GRADIENT_PALETTE( Complementary_06a_gp ) {
+    0, 100,178,255,
+  127, 165,107, 71,
+  255, 255, 55,  4
+};
+
+DEFINE_GRADIENT_PALETTE( rainbowsherbet_gp ) {
+    0, 255, 33,  4,
+   43, 255, 68, 25,
+   86, 255,  7, 25,
+  127, 255, 82,103,
+  170, 255,255,242,
+  209,  42,255, 22,
+  255,  87,255, 65
+};
+
+DEFINE_GRADIENT_PALETTE( pastel_rb3_gp ) {
+    0,  54,138,170,
+   33,  58,186,109,
+   63, 173,239, 83,
+   89, 229,201, 61,
+  119, 249,127, 29,
+  140, 252,103, 56,
+  165, 232, 72,155,
+  193, 206,108,219,
+  219, 169,128,233,
+  242,  95,139,205,
+  255,  95,139,205
+};
+
+DEFINE_GRADIENT_PALETTE( beading_gp ) {
+    0, 126,114,128,
+   10, 255,252,250,
+   22, 239,169,142,
+   35, 247,197,190,
+   48, 109, 53, 22,
+   61, 255,248,207,
+   73, 239,112,255,
+   89, 255,186,199,
+   99,  92, 16, 22,
+  112, 255,250,199,
+  124, 247, 38, 54,
+  135, 249,219,164,
+  147, 222,131, 52,
+  158, 255,187,132,
+  175, 247, 54, 68,
+  188, 255,118,252,
+  201, 201, 22, 28,
+  214, 255,135,103,
+  224, 247,250,237,
+  234, 210,108,255,
+  244, 242, 44, 61,
+  255,  49, 29, 74
+};
+
+DEFINE_GRADIENT_PALETTE( dances_with_fairies_gp ) {
+    0, 227,219,135,
+   17, 175,166, 42,
+   35, 227,128, 64,
+   56, 239, 96,117,
+   79, 239,128,228,
+   96, 188, 70,145,
+  117, 175, 70,145,
+  140,  67,128,240,
+  163,  55, 22,255,
+  186,  44, 96,240,
+  206,  35,219,135,
+  224,  55,231, 92,
+  244, 175,219,108,
+  255, 175,219,108
+};
+
+DEFINE_GRADIENT_PALETTE( tranquil_gp ) {
+    0, 128,166,201,
+   28, 194,146,197,
+  112, 242,149,207,
+  135,  58,135,186,
+  170,  39,156,221,
+  198,  50,189,207,
+  229,  26,128,105,
+  252, 128,166,201,
+  255, 128,166,201
+};
+
+DEFINE_GRADIENT_PALETTE( springfloralblend_gp ) {
+    0, 255,255,255,
+   10,  36,233, 41,
+   20,  46,235,  0,
+   30,  61,169,219,
+   40,   8, 57,147,
+   56, 229, 15,  5,
+   63, 255,  1,  1,
+   79, 255,  7,178,
+   86, 217,  1, 61,
+   96, 255,246, 23,
+  109, 244,149,  0,
+  117,  91, 68,216,
+  130,  34, 10,142,
+  142, 118,248,  1,
+  150,  69,213,  0,
+  163,   1, 31,151,
+  175,  57,159,255,
+  188, 244, 14,  5,
+  196, 255, 25, 13,
+  209,  95, 86,233,
+  219,  51, 16,186,
+  229,   8,104,  0,
+  242,   7,186,111,
+  255, 255,255,255
+};
+
+DEFINE_GRADIENT_PALETTE( tropical_beach_gp ) {
+    0,   1, 61, 85,
+   38,   9,176,255,
+   63, 255, 97,  5,
+   96, 255, 26, 19,
+  130, 206,201,  6,
+  165, 255, 29, 16,
+  191, 255, 97,  5,
+  221,   9,176,255,
+  247,   1, 61, 85,
+  255,   1, 61, 85
+};
+
+DEFINE_GRADIENT_PALETTE( heartbalance_gp ) {
+    0,   1,199,  1,
+   22, 100,180, 98,
+   51, 227,138,188,
+   71, 139,  4, 26,
+   91, 227,138,188,
+  109, 100,180, 98,
+  147, 100,180, 98,
+  165, 139,  4, 26,
+  196, 220,119,142,
+  224, 152,  4, 27,
+  255,   1,199,  1
+};
+
+DEFINE_GRADIENT_PALETTE( omageerte3_gp ) {
+    0,  87,175, 60,
+   45, 132,107,205,
+   96, 210,133,149,
+  142, 229, 22, 51,
+  175, 137,199,245,
+  226, 144,225, 56,
+  249,  87,175, 60,
+  255,  87,175, 60
+};
+
+DEFINE_GRADIENT_PALETTE( qual_dark_06_gp ) {//splitted
+    0,  16, 59,105,
+   42,  16, 59,105,
+   42, 142, 33, 51,
+   84, 142, 33, 51,
+   84, 199, 51, 32,
+  127, 199, 51, 32,
+  127, 192,161, 29,
+  170, 192,161, 29,
+  170,  58,133, 24,
+  212,  58,133, 24,
+  212,  17,133, 65,
+  255,  17,133, 65
+};
+
+DEFINE_GRADIENT_PALETTE( tashangel_gp ) {
+    0, 133, 68,197,
+   51,   2,  1, 33,
+  101,  50, 35,130,
+  153, 199,225,237,
+  204,  41,187,228,
+  255, 133, 68,197
+};
+
+DEFINE_GRADIENT_PALETTE( renmaiden_gp ) {
+    0,   3, 82,  4,
+   38,   9, 13, 16,
+   89, 184, 77,105,
+  127, 201,213,156,
+  165, 222, 88,170,
+  216, 190, 63,  4,
+  255,   3, 82,  4
+};
+
+DEFINE_GRADIENT_PALETTE( trove_gp ) {
+    0,  12, 23, 11,
+   12,   8, 52, 27,
+   25,  32,142, 64,
+   38,  55, 68, 30,
+   51, 190,135, 45,
+   63, 201,175, 59,
+   76, 186, 80, 20,
+   89, 220, 79, 32,
+  101, 184, 33, 14,
+  114, 137, 16, 15,
+  127, 118, 20, 27,
+  140,  79, 16, 35,
+  153,  67,  8, 26,
+  165,  22,  9, 42,
+  178,  11,  3, 34,
+  191,  58, 31,109,
+  204, 186, 49, 83,
+  216, 182, 25, 55,
+  229,  39, 90,100,
+  242,  15, 81,132,
+  255,  68,135, 52
+};
+
+DEFINE_GRADIENT_PALETTE( zebra_gp ) {
+    0,   0,  0,  0,
+   64,   0,  0,  0,
+   96, 255,255,255,
+  128,   0,  0,  0,
+  124,   0,  0,  0,
+  255, 255,255,255,
+};
+
+DEFINE_GRADIENT_PALETTE( heat_gp ) {
+    0,   0,   0,   0,
+   32, 255, 255,   0,
+   64, 255, 255,   0,
+   96, 255, 255,   0,
+  127, 255, 117,   0,
+  160, 255, 117,   0,
+  192, 255, 117,   0,
+  224, 255, 255, 255,
+  255,   0,   0,   0
+};
+
+const TProgmemRGBPalette16 LithiumFireColors_p PROGMEM = {0x240707, 0x470e0e, 0x6b1414, 0x8e1b1b, CRGB::FireBrick, 0xc14244, 0xd16166, 0xe08187, 0xf0a0a9, CRGB::Pink, 0xff9ec0, 0xff7bb5, 0xff59a9, 0xff369e, CRGB::DeepPink};        //* пастель
+const TProgmemRGBPalette16 SodiumFireColors_p PROGMEM = {0x332100, 0x664200, 0x996300, 0xcc8400, CRGB::Orange, 0xffaf00, 0xffb900, 0xffc300, 0xffcd00, CRGB::Gold, 0xf8cd06, 0xf0c30d, 0xe9b913, 0xe1af1a, CRGB::Goldenrod};           //* Yellow
+const TProgmemRGBPalette16 CopperFireColors_p PROGMEM = {0x001a00, 0x003300, 0x004d00, 0x006600, CRGB::Green, 0x239909, 0x45b313, 0x68cc1c, 0x8ae626, CRGB::GreenYellow, 0x94f530, 0x7ceb30, 0x63e131, 0x4bd731, CRGB::LimeGreen};     //* Green
+const TProgmemRGBPalette16 AlcoholFireColors_p PROGMEM = {0x000033, 0x000066, 0x000099, 0x0000cc, CRGB::Blue, 0x0026ff, 0x004cff, 0x0073ff, 0x0099ff, CRGB::DeepSkyBlue, 0x1bc2fe, 0x36c5fd, 0x51c8fc, 0x6ccbfb, CRGB::LightSkyBlue};  //* Blue
 
 CRGBPalette16 paletteArr[] = {
-  /*HeatColors_p,
+  HeatColors_p,
   Fire_gp,
-  WoodFireColors_p,
-  NormalFire_p,
   LithiumFireColors_p,
   SodiumFireColors_p,
   CopperFireColors_p,
@@ -258,8 +777,7 @@ CRGBPalette16 paletteArr[] = {
   LavaColors_p,
   PartyColors_p,
   RainbowColors_p,
-  RainbowStripeColors_p,
-  CloudColors_p,
+  RainbowStripeColors_p,//10
   OceanColors_p,
   ForestColors_p,
   Sunset_Real_gp,
@@ -269,25 +787,51 @@ CRGBPalette16 paletteArr[] = {
   coldGrad_gp,
   hotGrad_gp,
   pinkGrad_gp,
-  comfy_gp,
+  comfy_gp, //20
   cyperpunk_gp,
   girl_gp,
   xmas_gp,
   acid_gp,
-  blueSmoke_gp,
   gummy_gp,
   leo_gp,
   aurora_gp,
-  redwhite_gp,*/
-  PartyColors_p,
-  RainbowColors_p,
-  RainbowStripeColors_p,
-  Sunset_Real_gp,
-  dkbluered_gp,
-  warmGrad_gp,
-  coldGrad_gp,
-  hotGrad_gp,
-  pinkGrad_gp,
-  cyperpunk_gp,
   redwhite_gp,
+  //--------------new-----------
+  bhw1_28_gp,
+  bhw2_whooo_gp, //30
+  bhw2_thanks_gp,
+
+  eawc_sub_gp,
+  paintjet_gp,
+  calbayo_21_gp,
+  shikon_21_gp,
+  purple_orange_d05_gp,
+  cbcPiYG_gp,
+  PuOr_gp,
+  Need_I_Say_More_gp,
+  Alive_And_Kicking_gp,
+  icing_on_the_cake_gp,
+  mellon_ball_surprise_gp,
+  Pastels_gp,
+  Analogous_06_gp,
+  Split_Complementary_06_gp,
+  Split_04_gp,
+  Split_Complementary_07_gp,
+  Split_Complementary_03a_gp,
+  Complementary_06a_gp,
+  rainbowsherbet_gp,
+  pastel_rb3_gp,
+  beading_gp,
+  dances_with_fairies_gp,
+  tranquil_gp,
+  springfloralblend_gp,
+  tropical_beach_gp,
+  heartbalance_gp,
+  omageerte3_gp,
+  qual_dark_06_gp,
+  tashangel_gp,
+  renmaiden_gp,
+  trove_gp,
+  zebra_gp,
+  heat_gp
 };

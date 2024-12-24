@@ -1,12 +1,12 @@
 void switchEff() {
   // поиск favorite эффектов
   while (true) {
-    if (cfg.rndCh) curEff = random(0, ACTIVE_PALETTES * 2);
+    if (cfg.rndCh) curPreset = random(0, PRESETS_SIZE);
     else {
-      if (++curEff >= ACTIVE_PALETTES * 2) curEff = 0;
+      if (++curPreset >= PRESETS_SIZE) curPreset = 0;
     }
-    if (effs[curEff].fav) break;
+    if (presets[curPreset].fav) break;
   }
   DEBUG("switch to: ");
-  DEBUGLN(curEff);
+  DEBUGLN(curPreset);
 }
