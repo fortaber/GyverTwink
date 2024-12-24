@@ -47,4 +47,4 @@
 
 ## Приложение
 - **Android** - [Google Play](https://play.google.com/store/apps/details?id=ru.alexgyver.GyverTwink), [.apk](https://github.com/AlexGyver/GyverTwink/raw/main/Android/gyvertwink.apk)
-apk, bundle файлы и исходный код для android studio
+apk и bundle файлы
